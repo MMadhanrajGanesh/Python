@@ -1,0 +1,23 @@
+def main():
+    # Given dictionary with student names and their marks in subjects
+    marks = {
+        'Subu': {'Maths': 88, 'Eng': 60, 'SSt': 95},
+        'Amol': {'Maths': 78, 'Eng': 68, 'SSt': 89},
+        'Raka': {'Maths': 56, 'Eng': 66, 'SSt': 77}
+    }
+    
+    # Print marks obtained by Amol in English
+    print("Marks obtained by Amol in English:", marks['Amol']['Eng'])
+    
+    # Set marks obtained by Raka in Maths to 77
+    marks['Raka']['Maths'] = 77
+    print("Updated marks for Raka in Maths:", marks['Raka']['Maths'])
+    
+    # Sort the dictionary by name
+    sorted_marks = dict(sorted(marks.items()))
+    print("Sorted dictionary by name:")
+    for name, subjects in sorted_marks.items():
+        print(name, subjects)
+
+if __name__ == "__main__":
+    main()
