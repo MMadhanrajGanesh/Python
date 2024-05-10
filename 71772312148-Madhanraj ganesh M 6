@@ -1,0 +1,27 @@
+def main():
+    # Dictionary containing usernames and their corresponding passwords
+    user_data = {
+        'user1': 'password1',
+        'user2': 'password2',
+        'user3': 'password3',
+        'user4': 'password4',
+        'user5': 'password5',
+        'user6': 'password6',
+        'user7': 'password7',
+        'user8': 'password8',
+        'user9': 'password9',
+        'user10': 'password10',
+    }
+
+    # Input username and password from the user
+    input_username = input("Enter your username: ")
+    input_password = input("Enter your password: ")
+
+    # Check if the username exists and the password matches
+    if input_username in user_data and user_data[input_username] == input_password:
+        print("Login successful!")
+    else:
+        print("Invalid username or password.")
+
+if __name__ == "__main__":
+    main()
