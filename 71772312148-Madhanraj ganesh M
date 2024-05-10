@@ -1,0 +1,26 @@
+def main():
+    # Input the string from the user
+    input_string = input("Enter a string: ")
+
+    # Create a dictionary to hold character frequencies
+    char_frequency = {}
+
+    # Count the frequency of each character in the string
+    for char in input_string:
+        if char in char_frequency:
+            char_frequency[char] += 1
+        else:
+            char_frequency[char] = 1
+
+    # Print the dictionary containing frequencies
+    print("Character Frequencies:")
+    for char, freq in char_frequency.items():
+        print(f"'{char}': {freq}")
+
+    # Print the histogram
+    print("\nHistogram:")
+    for char, freq in char_frequency.items():
+        print(f"{char}: {'*' * freq}")
+
+if __name__ == "__main__":
+    main()
