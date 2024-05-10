@@ -1,0 +1,36 @@
+def calculate_total_bill(prices, quantities):
+    # Calculate the total bill by multiplying each item's price by the quantity purchased
+    total_bill = 0
+    for item, quantity in quantities.items():
+        if item in prices:  # Check if the item exists in the price dictionary
+            total_bill += prices[item] * quantity
+        else:
+            print(f"Warning: {item} price not found.")
+    return total_bill
+
+def main():
+    # Dictionary containing grocery items and their prices
+    prices = {
+        'milk': 1.50,
+        'bread': 2.00,
+        'eggs': 0.20,
+        'apple': 0.50,
+        'banana': 0.30
+    }
+    
+    # Dictionary containing grocery items and quantity purchased
+    quantities = {
+        'milk': 2,
+        'bread': 1,
+        'eggs': 12,
+        'apple': 6
+    }
+    
+    # Calculate the total bill
+    total_bill = calculate_total_bill(prices, quantities)
+    
+    # Output the total bill
+    print(f"The total bill is ${total_bill:.2f}")
+
+if __name__ == "__main__":
+    main()
