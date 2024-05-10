@@ -1,0 +1,24 @@
+def main():
+    # Dictionary with name as keys and marks as values
+    marks_dict = {
+        'Alice': 88,
+        'Bob': 92,
+        'Carol': 87,
+        'Dave': 75,
+        'Eve': 90
+    }
+    
+    # Print and delete from last to first
+    while marks_dict:
+        # Retrieve the last added key
+        last_key = list(marks_dict.keys())[-1]
+        # Print the key-value pair
+        print(f"{last_key}: {marks_dict[last_key]}")
+        # Remove the key-value pair from the dictionary
+        del marks_dict[last_key]
+
+    # Check the dictionary is empty
+    print("\nDictionary after deletion:", marks_dict)
+
+if __name__ == "__main__":
+    main()
