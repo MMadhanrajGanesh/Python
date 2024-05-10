@@ -1,0 +1,14 @@
+# Define a dictionary
+my_dict = {'name': 'Alice', 'age': 25, 'city': 'New York'}
+
+# Fetch all keys
+keys = my_dict.keys()
+print("Keys:", list(keys))  # Convert to list for display
+
+# Fetch all values
+values = my_dict.values()
+print("Values:", list(values))  # Convert to list for display
+
+# Fetch all key-value pairs
+items = my_dict.items()
+print("Items:", list(items))  # Convert to list for display
