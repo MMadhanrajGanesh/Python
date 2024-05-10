@@ -1,0 +1,35 @@
+def main():
+    # Dictionary storing interface data
+    interfaces = {
+        'eth0': {'IP': '1.1.1.1', 'status': 'up'},
+        'eth1': {'IP': '2.2.2.2', 'status': 'up'},
+        'wlan0': {'IP': '3.3.3.3', 'status': 'down'},
+        'wlan1': {'IP': '4.4.4.4', 'status': 'up'}
+    }
+
+    # Find the status of a given interface
+    interface_to_check = 'eth1'
+    if interface_to_check in interfaces:
+        print(f"Status of {interface_to_check}: {interfaces[interface_to_check]['status']}")
+    else:
+        print(f"No data for interface {interface_to_check}")
+
+    # Find interface and IP of all interfaces which are up
+    print("\nInterfaces that are up:")
+    for interface, details in interfaces.items():
+        if details['status'] == 'up':
+            print(f"{interface} with IP {details['IP']}")
+
+    # Find the total number of interfaces
+    total_interfaces = len(interfaces)
+    print(f"\nTotal number of interfaces: {total_interfaces}")
+
+    # Add two new entries to the dictionary
+    interfaces['eth2'] = {'IP': '5.5.5.5', 'status': 'up'}
+    interfaces['wlan2'] = {'IP': '6.6.6.6', 'status': 'down'}
+    print("\nUpdated list of interfaces:")
+    for interface, details in interfaces.items():
+        print(f"{interface}: IP {details['IP']}, Status {details['status']}")
+
+if __name__ == "__main__":
+    main()
