@@ -1,0 +1,34 @@
+def modify_portfolio(portfolio):
+    # Add a new key 'MF' with values 'Reliance' and 'ABSL'
+    portfolio['MF'] = ['Reliance', 'ABSL']
+    
+    # Set the value of 'accounts' to a list containing 'Axis' and 'BOB'
+    portfolio['accounts'] = ['Axis', 'BOB']
+    
+    # Correct the typo in the 'shares' list initialization and then sort the items
+    portfolio['shares'] = [share.strip() for share in portfolio['shares']]  # Clean up any spacing issues
+    portfolio['shares'].sort()
+    
+    # Delete the list stored under the 'ornaments' key
+    del portfolio['ornaments']
+
+    return portfolio
+
+def main():
+    # Initial portfolio dictionary
+    portfolio = {
+        'accounts': ['SBI', 'IOB'],
+        'shares': ['HDFC', 'ICICI', 'TM', 'TCS'],
+        'ornaments': ['10 gm gold', '1 kg silver']
+    }
+    
+    # Modify the portfolio as per the operations
+    updated_portfolio = modify_portfolio(portfolio)
+    
+    # Print the updated portfolio
+    print("Updated Portfolio:")
+    for key, value in updated_portfolio.items():
+        print(f"{key}: {value}")
+
+if __name__ == "__main__":
+    main()
