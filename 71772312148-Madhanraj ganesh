@@ -1,0 +1,42 @@
+def calculate_totals_and_averages(students):
+    # Transform the marks to totals and averages
+    for student, marks in students.items():
+        total = sum(marks)
+        average = total / len(marks)
+        students[student] = {'Total': total, 'Average': average}
+    return students
+
+def find_topper(students):
+    # Identify the topper based on the highest total marks
+    topper = None
+    max_total = -1  # Start with an impossible low total
+    for student, details in students.items():
+        if details['Total'] > max_total:
+            max_total = details['Total']
+            topper = student
+    return topper
+
+def main():
+    # Dictionary of students with their marks in three subjects
+    students = {
+        "Alice": [82, 90, 78],
+        "Bob": [75, 84, 91],
+        "Clara": [88, 76, 95],
+        "David": [70, 80, 65]
+    }
+
+    # Calculate totals and averages
+    students = calculate_totals_and_averages(students)
+
+    # Print the students' total and average marks
+    print("Students' Totals and Averages:")
+    for student, details in students.items():
+        print(f"{student}: Total = {details['Total']}, Average = {details['Average']:.2f}")
+
+    # Find the class topper
+    topper = find_topper(students)
+    print("\nClass Topper:")
+    print(f"{topper} with Total marks of {students[topper]['Total']}")
+
+if __name__ == "__main__":
+    main()
